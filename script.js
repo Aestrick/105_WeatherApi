@@ -76,7 +76,6 @@ const getWeatherData = async () => {
     }
 };
 
-
 // --- EVENT LISTENERS ---
 searchButton.addEventListener('click', getWeatherData);
 lokasiInput.addEventListener('keyup', (event) => {

@@ -1,0 +1,198 @@
+/* Import Font dari Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================================== */
+/* PERBAIKAN UNTUK POSISI DAN SCROLL */
+/* ============================================== */
+html {
+    height: 100%;
+    /* BARU: Memastikan scroll akan otomatis muncul jika kontennya lebih panjang dari layar */
+    overflow: auto; 
+}
+
+body {
+    min-height: 100%;
+    /* DIHAPUS: display, justify-content, dan align-items sudah tidak ada di sini */
+    background: linear-gradient(135deg, #232526, #414345);
+    color: #fff;
+    transition: background 0.8s ease-in-out;
+}
+/* ============================================== */
+
+/* --- KELAS UNTUK BACKGROUND DINAMIS --- */
+body.weather-sunny {
+    background: linear-gradient(135deg, #47abff, #1a82e8);
+}
+body.weather-cloudy {
+    background: linear-gradient(135deg, #6c757d, #495057);
+}
+body.weather-rainy {
+    background: linear-gradient(135deg, #2c3e50, #1f2b38);
+}
+body.weather-misty {
+    background: linear-gradient(135deg, #bdc3c7, #8c969d);
+}
+
+.card {
+    /* INI KUNCINYA: Kode untuk posisi tengah yang sempurna */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 20px;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    height: 125px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-box i {
+    font-size: 28px;
+    margin-right: 10px;
+}
+
+.search-box input {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-box button {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    color: #232526;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    background: #232526;
+    color: #fff;
+}
+
+.weather-content, .extra-info, .coords-info, .not-found {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.not-found {
+    text-align: center;
+    margin-top: 20px;
+    scale: 0;
+    transition: all 0.5s ease;
+}
+
+.not-found img {
+    width: 80%;
+}
+
+.not-found p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s forwards;
+}
+@keyframes fadeIn {
+    to {
+        visibility: visible;
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.weather-image {
+    text-align: center;
+}
+
+.weather-image img {
+    width: 120px;
+}
+
+.weather-details {
+    text-align: center;
+    margin-top: -10px;
+}
+
+.temperature {
+    font-size: 4rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.temperature .celcius {
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 500;
+    top: 20px;
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.extra-info {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item i {
+    font-size: 36px;
+}
+
+.info-item span {
+    font-weight: 600;
+}
+
+.coords-info {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.7);
+}

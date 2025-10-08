@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App | Praktikum PPWS</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <main class="card">
+        <div class="search-box">
+            <i class='bx bxs-map'></i>
+            <input type="text" id="lokasiInput" placeholder="Ketik lokasimu di sini...">
+            <button id="searchButton" class="bx bx-search"></button>
+        </div>
+
+        <div class="not-found">
+            <img src="https://i.ibb.co/ckYc72T/404.png" alt="Lokasi Tidak Ditemukan">
+            <p>Waduh, lokasinya nggak ketemu nih!</p>
+        </div>
+
+        <div class="weather-content">
+            <div class="weather-image">
+                <img src="" id="weatherIcon" alt="Ikon Cuaca">
+            </div>
+
+            <div class="weather-details">
+                <p class="temperature"><span id="suhu">0</span><span class="celcius">°C</span></p>
+                <p class="description" id="deskripsiCuaca">Cerah Berawan</p>
+            </div>
+        </div>
+
+        <div class="extra-info">
+            <div class="info-item">
+                <i class='bx bx-globe'></i>
+                <div>
+                    <p>Negara</p>
+                    <span id="negara">-</span>
+                </div>
+            </div>
+            <div class="info-item">
+                <i class='bx bxs-buildings'></i>
+                <div>
+                    <p>Provinsi</p>
+                    <span id="provinsi">-</span>
+                </div>
+            </div>
+            <div class="info-item">
+                 <i class='bx bxs-flag-alt'></i>
+                <div>
+                    <p>Kota</p>
+                    <span id="kecamatan">-</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="coords-info">
+             <p>Lat: <span id="latitude">-</span> | Lon: <span id="longitude">-</span></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
